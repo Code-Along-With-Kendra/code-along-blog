@@ -15,11 +15,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-      ),
       body: SafeArea(
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             NavigationRail(
               selectedIndex: _selectedIndex,
@@ -50,6 +48,40 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             const VerticalDivider(thickness: 1, width: 1),
+            Expanded(
+              child: Card(
+                color: Colors.pink,
+                child: SizedBox(
+                  height: 200,
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          'CodeAlong.IO',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 50,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          'Learn along with me as we build out this blog together.',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w100,
+                            fontSize: 20,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
