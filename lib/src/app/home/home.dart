@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -29,21 +30,23 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               labelType: NavigationRailLabelType.all,
               trailing: IconButton(
-                onPressed: () {
-                  // Add your onPressed code here!
-                },
+                onPressed: () => context.goNamed('settings'),
                 icon: const Icon(Icons.more_horiz_rounded),
               ),
-              destinations: const <NavigationRailDestination>[
+              destinations: <NavigationRailDestination>[
                 NavigationRailDestination(
-                  icon: Icon(Icons.home_outlined),
-                  selectedIcon: Icon(Icons.home_filled),
-                  label: Text('Home'),
+                  icon: IconButton(
+                      onPressed: () => context.goNamed('home'),
+                      icon: const Icon(Icons.home_outlined)),
+                  selectedIcon: const Icon(Icons.home_filled),
+                  label: const Text('Home'),
                 ),
                 NavigationRailDestination(
-                  icon: Icon(Icons.book_outlined),
-                  selectedIcon: Icon(Icons.book),
-                  label: Text('Blog'),
+                  icon: IconButton(
+                      onPressed: () => context.goNamed('blog'),
+                      icon: const Icon(Icons.book_outlined)),
+                  selectedIcon: const Icon(Icons.book),
+                  label: const Text('Blog'),
                 ),
               ],
             ),
@@ -88,3 +91,5 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+// IconButton
