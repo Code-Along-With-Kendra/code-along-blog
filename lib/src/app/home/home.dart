@@ -52,36 +52,69 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const VerticalDivider(thickness: 1, width: 1),
             Expanded(
-              child: Card(
-                color: Colors.pink,
-                child: SizedBox(
-                  height: 200,
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          'CodeAlong.IO',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 50,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Card(
+                      color: Colors.pink,
+                      child: SizedBox(
+                        height: 200,
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Text(
+                                'CodeAlong.IO',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 50,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                'Learn along with me as we build out this blog together.',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w100,
+                                  fontSize: 20,
+                                ),
+                              )
+                            ],
                           ),
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          'Learn along with me as we build out this blog together.',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w100,
-                            fontSize: 20,
-                          ),
-                        )
-                      ],
+                      ),
                     ),
-                  ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 8.0,
+                        horizontal: 10.0,
+                      ),
+                      child: Card(
+                        color: Colors.white,
+                        child: SizedBox(
+                          height: 200,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: const [
+                                Text(
+                                  'Home Page Content',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 50,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             )
@@ -91,5 +124,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-// IconButton
