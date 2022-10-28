@@ -1,3 +1,4 @@
+import 'package:code_along/src/app/shared/page_template.dart';
 import 'package:flutter/material.dart';
 
 class Blog extends StatelessWidget {
@@ -5,8 +6,8 @@ class Blog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('Blog')),
+    return const PageTemplate(
+      pageContents: Center(child: Text('Blog')),
     );
   }
 }

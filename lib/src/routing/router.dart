@@ -8,9 +8,7 @@ final GoRouter goRouter = GoRouter(
     GoRoute(
       name: 'home',
       path: '/',
-      builder: (context, state) => const MyHomePage(
-        title: 'Home',
-      ),
+      builder: (context, state) => const HomePage(),
     ),
     GoRoute(
       name: 'blog',
