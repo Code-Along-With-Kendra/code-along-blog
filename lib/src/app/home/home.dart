@@ -1,4 +1,5 @@
 import 'package:code_along/src/app/shared/page_template.dart';
+import 'package:code_along/src/constants/text_styling.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,11 +18,7 @@ class HomePage extends StatelessWidget {
               children: const [
                 Text(
                   'Home Page Content',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 50,
-                  ),
+                  style: TextStyles.homePageHeader,
                 ),
               ],
             ),
