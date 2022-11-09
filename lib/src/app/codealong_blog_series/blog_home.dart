@@ -31,8 +31,12 @@ class _BlogState extends State<Blog> {
         child: Center(
           child: _jsonMap.isNotEmpty
               ? Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(_jsonMap["title"], style: TextStyles.postHeader),
+                    Align(
+                        alignment: Alignment.topCenter,
+                        child: Text(_jsonMap["title"],
+                            style: TextStyles.postHeader)),
                     Text('Author: ${_jsonMap["author"]}',
                         style: TextStyles.postNormalText),
                     Text('Published: ${_jsonMap["posting_date"]}',
@@ -40,8 +44,12 @@ class _BlogState extends State<Blog> {
                     const SizedBox(
                       height: 10,
                     ),
-                    Text(_jsonMap["blog_post"][0],
-                        style: TextStyles.postNormalText),
+                    for (final paragraph in _jsonMap["blog_post"])
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child:
+                            Text(paragraph, style: TextStyles.postNormalText),
+                      ),
                   ],
                 )
               : Column(),
