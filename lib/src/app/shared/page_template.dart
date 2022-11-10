@@ -1,3 +1,4 @@
+import 'package:code_along/src/constants/text_styling.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -65,22 +66,14 @@ class _PageTemplateState extends State<PageTemplate> {
                             children: const [
                               Text(
                                 'CodeAlong.IO',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 50,
-                                ),
+                                style: TextStyles.appHeader,
                               ),
                               SizedBox(
                                 height: 10,
                               ),
                               Text(
                                 'Learn along with me as we build out this blog together.',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w100,
-                                  fontSize: 20,
-                                ),
+                                style: TextStyles.appSubtitle,
                               )
                             ],
                           ),
