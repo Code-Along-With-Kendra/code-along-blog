@@ -1,11 +1,11 @@
+import 'package:code_along/src/app/codealong_blog_series/blog_home.dart';
+import 'package:code_along/src/app/home/home.dart';
+import 'package:code_along/src/app/settings/settings_home.dart';
 import 'package:code_along/src/constants/text_styling.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class PageTemplate extends StatefulWidget {
-  const PageTemplate({super.key, required this.pageContents});
-
-  final Widget pageContents;
+  const PageTemplate({super.key});
 
   @override
   State<PageTemplate> createState() => _PageTemplateState();
@@ -13,6 +13,12 @@ class PageTemplate extends StatefulWidget {
 
 class _PageTemplateState extends State<PageTemplate> {
   int _selectedIndex = 0;
+
+  static const List<Widget> _pages = <Widget>[
+    HomePage(),
+    BlogPage(),
+    SettingsPage()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -30,24 +36,21 @@ class _PageTemplateState extends State<PageTemplate> {
                 });
               },
               labelType: NavigationRailLabelType.all,
-              trailing: IconButton(
-                onPressed: () => context.goNamed('settings'),
-                icon: const Icon(Icons.more_horiz_rounded),
-              ),
-              destinations: <NavigationRailDestination>[
+              destinations: const <NavigationRailDestination>[
                 NavigationRailDestination(
-                  icon: IconButton(
-                      onPressed: () => context.goNamed('home'),
-                      icon: const Icon(Icons.home_outlined)),
-                  selectedIcon: const Icon(Icons.home_filled),
-                  label: const Text('Home'),
+                  icon: Icon(Icons.home_outlined),
+                  selectedIcon: Icon(Icons.home_filled),
+                  label: Text('Home'),
                 ),
                 NavigationRailDestination(
-                  icon: IconButton(
-                      onPressed: () => context.goNamed('blog'),
-                      icon: const Icon(Icons.book_outlined)),
-                  selectedIcon: const Icon(Icons.book),
-                  label: const Text('Blog'),
+                  icon: Icon(Icons.book_outlined),
+                  selectedIcon: Icon(Icons.book),
+                  label: Text('Blog'),
+                ),
+                NavigationRailDestination(
+                  icon: Icon(Icons.settings_outlined),
+                  selectedIcon: Icon(Icons.settings),
+                  label: Text('Settings'),
                 ),
               ],
             ),
@@ -85,7 +88,7 @@ class _PageTemplateState extends State<PageTemplate> {
                         vertical: 8.0,
                         horizontal: 10.0,
                       ),
-                      child: widget.pageContents,
+                      child: _pages.elementAt(_selectedIndex),
                     ),
                   ],
                 ),
