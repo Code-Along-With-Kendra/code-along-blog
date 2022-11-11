@@ -1,13 +1,12 @@
-import 'package:code_along/src/app/shared/page_template.dart';
 import 'package:flutter/material.dart';
 
-class Settings extends StatelessWidget {
-  const Settings({super.key});
+class SettingsPage extends StatelessWidget {
+  const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const PageTemplate(
-      pageContents: Center(child: Text('Settings')),
+    return const Center(
+      child: Text('Settings'),
     );
   }
 }
