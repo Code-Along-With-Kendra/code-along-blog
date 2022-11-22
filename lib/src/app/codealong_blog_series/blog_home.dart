@@ -33,7 +33,7 @@ class _BlogPageState extends State<BlogPage> {
                 Align(
                     alignment: Alignment.topCenter,
                     child:
-                        Text(_jsonMap["title"], style: TextStyles.postHeader)),
+                        Text(_jsonMap["title"], style: TextStyles.cardHeader)),
                 Text('Author: ${_jsonMap["author"]}',
                     style: TextStyles.postNormalText),
                 Text('Published: ${_jsonMap["posting_date"]}',

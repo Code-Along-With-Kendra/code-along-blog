@@ -22,10 +22,17 @@ class TextStyles {
     fontSize: 20,
   );
 
-  //Used for Blog post title
-  static const postHeader = TextStyle(
+  //Used for Blog post title and Theme Settings title
+  static const cardHeader = TextStyle(
     fontSize: 25,
     fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+
+  //Used for Theme Settings Sub Title
+  static const cardSubTitle = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.normal,
     color: Colors.black,
   );
 
