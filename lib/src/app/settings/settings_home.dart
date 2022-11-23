@@ -1,3 +1,4 @@
+import 'package:code_along/src/app.dart';
 import 'package:code_along/src/constants/component_styling.dart';
 import 'package:code_along/src/constants/text_styling.dart';
 import 'package:flutter/material.dart';
@@ -58,7 +59,14 @@ class _ThemeToggleButtonState extends State<ThemeToggleButton> {
     'Light Mode',
     'Dark Mode'
   ];
+
   String _selectedTheme = 'System Theme';
+
+  final List _themeNotifierNameList = [
+    ThemeMode.system,
+    ThemeMode.light,
+    ThemeMode.dark
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -77,6 +85,7 @@ class _ThemeToggleButtonState extends State<ThemeToggleButton> {
                 _selectedThemeIcon[i] = i == index;
                 if (i == index) {
                   _selectedTheme = _selectedThemeNames[i];
+                  MyApp.themeNotifier.value = _themeNotifierNameList[i];
                 }
               }
             });
