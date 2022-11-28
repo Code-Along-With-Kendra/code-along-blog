@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 class MyApp extends StatelessWidget {
   static final ValueNotifier<ThemeMode> themeNotifier =
       ValueNotifier(ThemeMode.system);
-  static final ValueNotifier<String> themeName = ValueNotifier("System Theme");
 
   const MyApp({Key? key}) : super(key: key);
 
