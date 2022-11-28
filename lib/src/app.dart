@@ -1,4 +1,5 @@
 import 'package:code_along/src/app/shared/page_template.dart';
+import 'package:code_along/src/constants/color_themes.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -15,8 +16,8 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'CodeAlong.IO',
-            theme: ThemeData(primarySwatch: Colors.pink),
-            darkTheme: ThemeData.dark(),
+            theme: ColorThemes.lightTheme,
+            darkTheme: ColorThemes.darkTheme,
             themeMode: currentMode,
             home: const PageTemplate(),
           );

@@ -1,4 +1,5 @@
 import 'package:code_along/src/app.dart';
+import 'package:code_along/src/constants/color_themes.dart';
 import 'package:code_along/src/constants/component_styling.dart';
 import 'package:code_along/src/constants/text_styling.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,6 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.white,
       child: SizedBox(
         height: 200,
         child: Padding(
@@ -91,10 +91,10 @@ class _ThemeToggleButtonState extends State<ThemeToggleButton> {
             });
           },
           borderRadius: const BorderRadius.all(Radius.circular(8)),
-          selectedBorderColor: Colors.pink[700],
-          selectedColor: Colors.pink,
-          fillColor: Colors.pink[200],
-          color: Colors.pink[400],
+          selectedBorderColor: ColorThemes.settingsSelectedBorderColor,
+          selectedColor: ColorThemes.settingsSelectedColor,
+          fillColor: ColorThemes.settingsFillColor,
+          color: ColorThemes.settingsColor,
           isSelected: _selectedThemeIcon,
           children: icons,
         ),
