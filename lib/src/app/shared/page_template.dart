@@ -1,6 +1,7 @@
 import 'package:code_along/src/app/codealong_blog_series/blog_home.dart';
 import 'package:code_along/src/app/home/home.dart';
 import 'package:code_along/src/app/settings/settings_home.dart';
+import 'package:code_along/src/constants/color_themes.dart';
 import 'package:code_along/src/constants/text_styling.dart';
 import 'package:flutter/material.dart';
 
@@ -60,7 +61,7 @@ class _PageTemplateState extends State<PageTemplate> {
                 child: Column(
                   children: [
                     Card(
-                      color: Colors.pink,
+                      color: ColorThemes.systemColor,
                       child: SizedBox(
                         height: 200,
                         child: Center(
