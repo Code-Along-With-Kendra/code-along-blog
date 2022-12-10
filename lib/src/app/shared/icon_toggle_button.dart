@@ -5,28 +5,25 @@ import 'package:flutter/material.dart';
 
 class IconToggleButton extends StatefulWidget {
   final List<Widget> icons;
+  final List<bool> selectedList;
+  final List<String> selectedDisplayName;
+  final List notifierList;
+  final String defaultSetting;
 
-  const IconToggleButton({required this.icons, super.key});
+  const IconToggleButton(
+      {required this.icons,
+      required this.selectedList,
+      required this.selectedDisplayName,
+      required this.notifierList,
+      required this.defaultSetting,
+      super.key});
 
   @override
   State<IconToggleButton> createState() => _IconToggleButtonState();
 }
 
 class _IconToggleButtonState extends State<IconToggleButton> {
-  final List<bool> _selectedThemeIcon = <bool>[true, false, false];
-  final List<String> _selectedThemeNames = <String>[
-    'System Theme',
-    'Light Mode',
-    'Dark Mode'
-  ];
-
-  String _selectedTheme = 'System Theme';
-
-  final List _themeNotifierNameList = [
-    ThemeMode.system,
-    ThemeMode.light,
-    ThemeMode.dark
-  ];
+  late String _selectedTheme = widget.defaultSetting;
 
   @override
   Widget build(BuildContext context) {
@@ -43,11 +40,11 @@ class _IconToggleButtonState extends State<IconToggleButton> {
             onPressed: (int index) {
               setState(() {
                 // The button that is tapped is set to true, and the others to false.
-                for (int i = 0; i < _selectedThemeIcon.length; i++) {
-                  _selectedThemeIcon[i] = i == index;
+                for (int i = 0; i < widget.selectedList.length; i++) {
+                  widget.selectedList[i] = i == index;
                   if (i == index) {
-                    _selectedTheme = _selectedThemeNames[i];
-                    MyApp.themeNotifier.value = _themeNotifierNameList[i];
+                    _selectedTheme = widget.selectedDisplayName[i];
+                    MyApp.themeNotifier.value = widget.notifierList[i];
                   }
                 }
               });
@@ -57,7 +54,7 @@ class _IconToggleButtonState extends State<IconToggleButton> {
             selectedColor: ColorThemes.settingsSelectedColor,
             fillColor: ColorThemes.settingsFillColor,
             color: ColorThemes.settingsColor,
-            isSelected: _selectedThemeIcon,
+            isSelected: widget.selectedList,
             children: widget.icons,
           ),
           Text(
